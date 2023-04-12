@@ -8,18 +8,18 @@
           <p class="text-secondary">{{ current_user.email }}</p>
         </div>
       </div>
-      <!-- FORM HERE -->
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Account Info</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
+
                     {% if form.username.errors %}
                         {{ form.username(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.username.errors %}
-                               <span>{{ error }}</span>
+                                <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
@@ -32,7 +32,7 @@
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.email.errors %}
-                               <span>{{ error }}</span>
+                                <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
@@ -44,13 +44,13 @@
                     {{ form.picture(class="form-control-file") }}
                     {% if form.picture.errors %}
                         {% for error in form.picture.errors %}
-                               <span class="text-danger">{{ error }}</span></br>
+                            <span class="text-danger">{{ error }}</span></br>
                         {% endfor %}
                     {% endif %}
-            </div>
+                </div>
             </fieldset>
             <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
     </div>
