@@ -3,4 +3,4 @@ COPY . /usr/app
 WORKDIR /usr/app
 RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD ["./run.py"]
+CMD ["python", "run.py"]
